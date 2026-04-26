@@ -21,7 +21,7 @@ export function setUsers(users: User[]) {
 
 export function getSession() {
   if (typeof window === "undefined") {
-    return [];
+    return null;
   }
 
   try {
