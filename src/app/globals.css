@@ -15,7 +15,7 @@
   --color-success: #5a7a4a;
 
   --font-display: var(--font-lora), serif;
-  --font-body: var(--font-dm-sans), sans-serif;
+  --font-body: var(--font-poppins), sans-serif;
   --font-mono: var(--font-dm-mono), monospace;
 
   --text-xs: 0.75rem;

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lora, DM_Mono, DM_Sans } from "next/font/google";
+import { Lora, DM_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 
 const lora = Lora({
@@ -8,10 +8,11 @@ const lora = Lora({
   weight: "variable",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: "variable",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const dmMono = DM_Mono({
@@ -35,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${dmMono.variable} ${lora.variable} antialiased`}
+      className={`${poppins.variable} ${dmMono.variable} ${lora.variable} antialiased`}
     >
       <body className="min-h-svh bg-canvas text-ink">{children}</body>
     </html>
