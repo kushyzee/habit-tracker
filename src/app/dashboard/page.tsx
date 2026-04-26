@@ -1,6 +1,7 @@
 "use client";
 
 import HabitForm from "@/components/habits/HabitForm";
+import HabitList from "@/components/habits/HabitList";
 import ProtectedRoute from "@/components/shared/ProtectedRoute";
 import { logout } from "@/lib/auth";
 import { toggleHabitCompletion } from "@/lib/habits";
@@ -122,7 +123,7 @@ function Dashboard({ session }: { session: Session }) {
           </div>
           <div className="h-px bg-border w-full mb-4" />
           <p className="font-body text-sm text-muted">
-            {greeting}, niklaus.oa@gmail.com
+            {greeting}, {session.email}
           </p>
         </header>
 
@@ -155,7 +156,7 @@ function Dashboard({ session }: { session: Session }) {
           </div>
         )}
 
-        {habits.length === 0 && !showForm && (
+        {habits.length === 0 && !showForm ? (
           <div
             data-testid="empty-state"
             className="flex flex-col items-center justify-center py-20 text-center"
@@ -179,6 +180,15 @@ function Dashboard({ session }: { session: Session }) {
               + Add a habit
             </button>
           </div>
+        ) : (
+          habits.length > 0 && (
+            <HabitList
+              habits={habits}
+              onToggleComplete={handleToggleComplete}
+              onEdit={handleEdit}
+              onDelete={handleDelete}
+            />
+          )
         )}
       </div>
     </div>
