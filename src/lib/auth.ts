@@ -48,7 +48,7 @@ export function login(email: string, password: string) {
 
   if (!user) {
     return {
-      error: "Invalid credentials",
+      error: "Invalid email or password",
     };
   }
 

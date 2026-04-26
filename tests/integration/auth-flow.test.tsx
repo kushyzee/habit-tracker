@@ -5,9 +5,9 @@ import LoginForm from "@/components/auth/LoginForm";
 import SignupForm from "@/components/auth/SignupForm";
 import { STORAGE_KEYS } from "@/lib/constants";
 
-const mockReplace = vi.fn();
+const mockPush = vi.fn();
 vi.mock("next/navigation", () => ({
-  useRouter: () => ({ replace: mockReplace }),
+  useRouter: () => ({ push: mockPush }),
 }));
 
 function seedUser(email: string, password: string) {
@@ -26,7 +26,7 @@ function seedUser(email: string, password: string) {
 describe("auth flow", () => {
   beforeEach(() => {
     localStorage.clear();
-    mockReplace.mockClear();
+    mockPush.mockClear();
   });
 
   it("submits the signup form and creates a session", async () => {
@@ -48,11 +48,11 @@ describe("auth flow", () => {
       expect(session.email).toBe("test@example.com");
     });
 
-    expect(mockReplace).toHaveBeenCalledWith("/dashboard");
+    expect(mockPush).toHaveBeenCalledWith("/dashboard");
   });
 
   it("shows an error for dubplicate signup email", async () => {
-    seedUser("existing@examle.com", "password123");
+    seedUser("existing@example.com", "password123");
     const user = userEvent.setup();
     render(<SignupForm />);
 
@@ -69,7 +69,7 @@ describe("auth flow", () => {
       );
     });
 
-    expect(mockReplace).not.toHaveBeenCalled();
+    expect(mockPush).not.toHaveBeenCalled();
   });
 
   it("submits the login form and stores the active session", async () => {
@@ -89,7 +89,7 @@ describe("auth flow", () => {
       expect(session.email).toBe("test@example.com");
     });
 
-    expect(mockReplace).toHaveBeenCalledWith("/dashboard");
+    expect(mockPush).toHaveBeenCalledWith("/dashboard");
   });
 
   it("shows an error for invalid login credentials", async () => {
@@ -107,6 +107,6 @@ describe("auth flow", () => {
       );
     });
 
-    expect(mockReplace).not.toHaveBeenCalled();
+    expect(mockPush).not.toHaveBeenCalled();
   });
 });
