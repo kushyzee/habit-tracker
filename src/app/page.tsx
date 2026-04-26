@@ -11,7 +11,7 @@ export default function Home() {
     const timer = setTimeout(() => {
       const session = getCurrentSession();
       router.replace(session ? "/dashboard" : "/login");
-    }, 10000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [router]);
