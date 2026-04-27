@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lora, DM_Mono, Poppins } from "next/font/google";
 import "./globals.css";
+import ServiceWorkerRegistration from "@/components/shared/ServiceWorkerRegistration";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -38,7 +39,10 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${dmMono.variable} ${lora.variable} antialiased`}
     >
-      <body className="min-h-svh bg-canvas text-ink">{children}</body>
+      <body className="min-h-svh bg-canvas text-ink">
+        <ServiceWorkerRegistration />
+        {children}
+      </body>
     </html>
   );
 }
