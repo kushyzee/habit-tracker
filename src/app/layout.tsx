@@ -39,7 +39,7 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${dmMono.variable} ${lora.variable} antialiased`}
     >
-      <body className="min-h-svh bg-canvas text-ink">
+      <body className="min-h-svh bg-canvas text-ink" suppressHydrationWarning>
         <ServiceWorkerRegistration />
         {children}
       </body>
