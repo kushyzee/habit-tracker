@@ -117,7 +117,6 @@ export default function HabitForm({
           />
         </div>
 
-        {/* Frequency — locked to daily */}
         <div className="flex flex-col gap-2">
           <label
             htmlFor="habit-frequency"
@@ -128,23 +127,21 @@ export default function HabitForm({
           <select
             id="habit-frequency"
             data-testid="habit-frequency-select"
-            disabled
-            value="daily"
+            defaultValue="daily"
             className="
               w-full bg-surface border border-border rounded-sm
               px-4 py-3 font-body text-base text-muted
-              cursor-not-allowed opacity-70
-              focus:outline-none
+              focus:outline-none focus:border-ink
+              transition-colors duration-150
             "
           >
             <option value="daily">Daily</option>
           </select>
           <p className="font-body text-xs text-muted">
-            Only daily habits are supported in this stage.
+            Only daily habits are supported in this version.
           </p>
         </div>
 
-        {/* Actions */}
         <div className="flex items-center justify-end gap-3 pt-2">
           <button
             type="button"

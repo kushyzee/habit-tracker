@@ -25,6 +25,7 @@ export default function FormField({
         {label}
       </label>
       <input
+        suppressHydrationWarning
         className="w-full bg-surface border border-border rounded-sm
           px-4 py-3 font-body text-base text-ink
           placeholder:text-muted

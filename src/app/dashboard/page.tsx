@@ -11,6 +11,8 @@ import { Habit } from "@/types/habit";
 import { generateId } from "@/utils/idGenerator";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import logo from "@/app/icon.svg";
+import Image from "next/image";
 
 export default function DashboardPage() {
   return (
@@ -101,13 +103,25 @@ function Dashboard({ session }: { session: Session }) {
   const greeting = getGreeting();
 
   return (
-    <div data-testid="dashboard-page" className="min-h-svh bg-canvas">
+    <div
+      suppressHydrationWarning
+      data-testid="dashboard-page"
+      className="min-h-svh bg-canvas"
+    >
       <div className="max-w-[680px] mx-auto px-4 sm:px-8 py-5">
         <header className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <span className="font-display italic text-lg font-semibold text-ink-strong">
-              Habit Tracker
-            </span>
+          <div className="flex items-center mb-4 justify-between">
+            <div className="inline-flex items-center gap-1.5">
+              <Image
+                loading="eager"
+                src={logo}
+                alt="logo"
+                className="w-8 h-auto"
+              />
+              <span className="font-display italic text-lg font-semibold text-ink-strong">
+                Habit Tracker
+              </span>
+            </div>
             <button
               data-testid="auth-logout-button"
               onClick={handleLogout}
