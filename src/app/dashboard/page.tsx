@@ -195,7 +195,8 @@ function Dashboard({ session }: { session: Session }) {
             </button>
           </div>
         ) : (
-          habits.length > 0 && (
+          habits.length > 0 &&
+          !showForm && (
             <HabitList
               habits={habits}
               onToggleComplete={handleToggleComplete}
