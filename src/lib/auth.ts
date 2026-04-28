@@ -1,6 +1,6 @@
 import { User } from "@/types/auth";
 import { getSession, getUsers, setSession, setUsers } from "./storage";
-import { generateId } from "@/utils/util";
+import { generateId } from "@/app/utils/idGenerator";
 export function signUp(email: string, password: string) {
   const users = getUsers();
   const exists = users.some((u) => u.email === email);

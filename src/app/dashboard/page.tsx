@@ -8,7 +8,7 @@ import { toggleHabitCompletion } from "@/lib/habits";
 import { getHabits, setHabits } from "@/lib/storage";
 import { Session } from "@/types/auth";
 import { Habit } from "@/types/habit";
-import { generateId } from "@/utils/util";
+import { generateId } from "@/app/utils/idGenerator";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
