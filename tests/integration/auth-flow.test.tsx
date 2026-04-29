@@ -51,7 +51,7 @@ describe("auth flow", () => {
     expect(mockPush).toHaveBeenCalledWith("/dashboard");
   });
 
-  it("shows an error for dubplicate signup email", async () => {
+  it("shows an error for duplicate signup email", async () => {
     seedUser("existing@example.com", "password123");
     const user = userEvent.setup();
     render(<SignupForm />);
