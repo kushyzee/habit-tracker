@@ -137,19 +137,18 @@ npm run test:e2e
 Generated with `npm run test:unit`. Minimum threshold: 80% line coverage for `src/lib/`.
 
 ```bash
-----------------------|---------|----------|---------|---------|-------------------
-File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
-
--------------------|---------|----------|---------|---------|-------------------
-All files | 92.18 | 90 | 88.23 | 91.93 |
-auth.ts | 88.88 | 100 | 66.66 | 87.5 | 42-46
-constants.ts | 100 | 100 | 100 | 100 |
-habits.ts | 100 | 100 | 100 | 100 |
-slug.ts | 100 | 100 | 100 | 100 |
-storage.ts | 85.71 | 75 | 100 | 85.71 | 7,24,41
-streaks.ts | 100 | 100 | 100 | 100 |
-validators.ts | 100 | 100 | 100 | 100 |
-----------------------|---------|----------|---------|---------|-------------------
+---------------|---------|----------|---------|---------|-------------------
+File           | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+---------------|---------|----------|---------|---------|-------------------
+All files      |   92.18 |       90 |   88.23 |   91.93 |
+ auth.ts       |   88.88 |      100 |   66.66 |    87.5 | 42-46
+ constants.ts  |     100 |      100 |     100 |     100 |
+ habits.ts     |     100 |      100 |     100 |     100 |
+ slug.ts       |     100 |      100 |     100 |     100 |
+ storage.ts    |   85.71 |       75 |     100 |   85.71 | 7,24,41
+ streaks.ts    |     100 |      100 |     100 |     100 |
+ validators.ts |     100 |      100 |     100 |     100 |
+---------------|---------|----------|---------|---------|-------------------
 ```
 
 ## Local Persistence Structure
@@ -249,7 +248,7 @@ On mobile: use "Add to Home Screen" from the browser menu.
 | Persistence | localStorage                               | Required by spec; resets per browser/device                              |
 | Frequency   | Daily only                                 | Spec explicitly limits to daily for this stage                           |
 | Offline     | App shell only                             | Full offline data sync requires a backend                                |
-| PWA icons   | Generated programmatically                 | No design assets provided                                                |
+| PWA icons   | Gotten from Freepik                        | No design assets provided                                                |
 | Routing     | `window.location.href` for splash redirect | More reliable than `router.replace()` for Playwright navigation tracking |
 
 ---
